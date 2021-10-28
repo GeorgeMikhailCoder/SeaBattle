@@ -1,0 +1,18 @@
+def receive_shot(self, shot):
+    sx, sy = shot
+
+    if type(self.field.map[sx][sy]) == Ship:
+        ship = self.field.map[sx][sy]
+        ship.hp -= 1
+
+        if ship.hp <= 0:
+            self.field.mark_destroyed_ship(ship, FieldPart.main)
+            self.ships.remove(ship)
+            return ship
+
+        self.field.map[sx][sy] = Cell.damaged_ship
+        return 'get'
+
+    else:
+        self.field.map[sx][sy] = Cell.miss_cell
+        return 'miss'
