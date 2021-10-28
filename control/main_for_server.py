@@ -2,6 +2,11 @@ import os
 from random import randrange
 from random import choice
 
+def empty_func(*args, **kwargs):
+    return
+
+def send_to_server():
+    return
 
 class FieldPart(object):
     main = 'map'
@@ -403,17 +408,14 @@ class Player(object):
             return x, y
 
     # при совершении выстрела мы будем запрашивать ввод данных с типом shot
-    def make_shot(self, target_player):
+    def make_shot(self):
 
         sx, sy = self.get_input('shot')
 
-        if sx + sy == 500 or self.field.radar[sx][sy] != Cell.empty_cell:
-            return 'retry'
-        # результат выстрела это то что целевой игрок ответит на наш ход
-        # промазал, попал или убил (в случае убил возвращается корабль)
-        shot_res = target_player.receive_shot((sx, sy))
+        return sx, sy
 
-        #### should stop
+    def ser_shot_result(self, shot_res, sx, sy):
+
         if shot_res == 'miss':
             self.field.radar[sx][sy] = Cell.miss_cell
 
@@ -446,7 +448,7 @@ class Player(object):
             if ship.hp <= 0:
                 self.field.mark_destroyed_ship(ship, FieldPart.main)
                 self.ships.remove(ship)
-                return ship
+                return 'kill'
 
             self.field.map[sx][sy] = Cell.damaged_ship
             return 'get'
@@ -501,9 +503,10 @@ if __name__ == '__main__':
     players = []
     players.append(Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1))
     players.append(Player(name='IQ180', is_ai=True, auto_ship=True, skill=1))
-
     # создаем саму игру и погнали в бесконечном цикле
     game = Game()
+
+    globStatus_active = True
 
     while True:
         # каждое начало хода проверяем статус и дальше уже действуем исходя из статуса игры
@@ -513,6 +516,8 @@ if __name__ == '__main__':
             game.add_player(players.pop(0))
 
         if game.status == 'in game':
+            ### запросить статус игрока Global_active
+
             # в основной части игры мы очищаем экран добавляем сообщение для текущего игрока и отрисовываем игру
             Game.clear_screen()
             game.current_player.message.append("Ждём приказа: ")
@@ -520,25 +525,56 @@ if __name__ == '__main__':
             # очищаем список сообщений для игрока. В следующий ход он уже получит новый список сообщений
             game.current_player.message.clear()
             # ждём результата выстрела на основе выстрела текущего игрока в следующего
-            shot_result = game.current_player.make_shot(game.next_player)
+
+            if (globStatus_active):
+                x, y = game.current_player.make_shot()
+                ### вызов функции принятия резeультата с сервера от х у  и вызвать от нее след функцию
+                #str = empty_func(x, y)
+                print(x,' ', y, type(x), ' ', type(y))
+                shot_result = game.current_player.ser_shot_result('get', x, y)
+                #(str, x, y)
+
             # в зависимости от результата накидываем сообщений и текущему игроку и следующему
             # ну и если промазал - передаем ход следующему игроку.
-            if shot_result == 'miss':
-                game.next_player.message.append('На этот раз {}, промахнулся! '.format(game.current_player.name))
-                game.next_player.message.append('Ваш ход {}!'.format(game.next_player.name))
-                game.switch_players()
-                continue
-            elif shot_result == 'retry':
-                game.current_player.message.append('Попробуйте еще раз!')
-                continue
-            elif shot_result == 'get':
-                game.current_player.message.append('Отличный выстрел, продолжайте!')
-                game.next_player.message.append('Наш корабль попал под обстрел!')
-                continue
-            elif shot_result == 'kill':
-                game.current_player.message.append('Корабль противника уничтожен!')
-                game.next_player.message.append('Плохие новости, наш корабль был уничтожен :(')
-                continue
+                if shot_result == 'miss':
+                    game.next_player.message.append(f'На этот раз {game.current_player.name}, промахнулся!')
+                    #game.next_player.message.append('Ваш ход {}!'.format(game.next_player.name))
+                    # ask server to change the status
+                    #game.switch_players()
+                    globStatus_active != globStatus_active
+                    continue
+
+                elif shot_result == 'retry':
+                    game.current_player.message.append('Попробуйте еще раз!')
+                    continue
+                elif shot_result == 'get':
+                    game.current_player.message.append('Отличный выстрел, продолжайте!')
+                    game.next_player.message.append('Наш корабль попал под обстрел!')
+                    continue
+                elif shot_result == 'kill':
+                    game.current_player.message.append('Корабль противника уничтожен!')
+                    game.next_player.message.append('Плохие новости, наш корабль был уничтожен :(')
+                    continue
+
+            if not globStatus_active:
+                #ask coordinates shot from server
+
+                shot = empty_func()
+
+                # wait for the server answer
+
+                send_str = game.current_player.receive_shot(shot)
+                send_to_server(send_str)
+                if send_str == 'miss':
+                    globStatus_active != globStatus_active
+
+
+
+
+
+
+
+
 
         if game.status == 'game over':
             Game.clear_screen()
