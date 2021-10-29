@@ -13,7 +13,7 @@ urlAns = "ans_shot"
 urlWaitAns = "wait_ans"
 
 
-myID = "12"
+myID = "23"
 
 def checkShot(step):
     x,y = step
@@ -106,7 +106,6 @@ def wait_ans():
         ans, data = myRequest(baseUrl + urlWaitAns, "ans", {
             "id": myID,
         })
-        ic(data)
     endGame = "endGame" in data
     return ans, endGame
 
@@ -116,10 +115,12 @@ if __name__ == '__main__':
     begin()
 
     for i in range(5):
-        shot()
-        wait_ans()
         wait_shot()
         make_ans()
+        shot()
+        wait_ans()
+
 
 
     print("end")
+
