@@ -84,9 +84,9 @@ def step():
 
 
     if curID == mainAdmin.activeGamer:
-        if not "step" in request.args:
+        if not "step_x" in request.args:
             return json.dumps({"error": "empty step"})
-        mainAdmin.step = request.args.get('step')
+        mainAdmin.step = (request.args.get('step_x'), request.args.get('step_y'))
 
         return json.dumps({"ans": "OK"})
     else:
@@ -103,10 +103,10 @@ def wait_shot():
         if mainAdmin.step != None:
             step = mainAdmin.step
             mainAdmin.step = None
-            print(f"")
-            return json.dumps({"ans": "OK", "step": step})
+            print(f"step = {step}")
+            return json.dumps({"ans": "OK", "step_x": step[0], "step_y": step[1]})
         else:
-            return json.dumps({"ans": "wait", "step":None})
+            return json.dumps({"ans": "wait"})
     else:
         return json.dumps({"ans": "error", "error": "It is your step. Make shot in '/shot' url"})
 
@@ -131,6 +131,7 @@ def ans_shot():
 
             if 'endGame' in request.args:
                 mainAdmin.endGame = True
+                mainAdmin.countGamers=0
 
             if ans == answers["miss"]:
                 mainAdmin.activeGamer = curID

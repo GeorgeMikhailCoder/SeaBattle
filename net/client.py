@@ -67,11 +67,13 @@ def begin():
     })
     return start
 
-def shot(step=(1,1)):
+def shot(x=0,y=0):
+    step = x,y
     ic("shot", step)
     myRequest(baseUrl + urlStep, "ans", {
         "id": myID,
-        "step": step
+        "step_x": step[0],
+        "step_y": step[1]
     })
 
 def wait_shot():
@@ -86,8 +88,9 @@ def wait_shot():
             "id": myID,
         })
 
-    step = data["step"]
-    return step
+    x,y = data["step_x"], data["step_y"]
+    ic(x,y)
+    return x,y
 
 def make_ans(ans="miss", endGame=False):
     ic("make_ans")
