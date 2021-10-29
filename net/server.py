@@ -4,7 +4,6 @@ from icecream import ic
 app = Flask(__name__)
 
 
-
 def checkStep(step, field):
     x,y = step
 
@@ -22,12 +21,19 @@ class Agregator:
     activeGamer = None
     gamers = {}
     step = None
-    ans_step = None
     endGame = False
-
-
+    data = None
 
 mainAdmin = Agregator()
+
+def switchActive(curID):
+    x = mainAdmin.gamers.copy()
+    x.pop(curID)
+
+    z = x.keys()
+    k=[a for a in z][0]
+    newID = mainAdmin.gamers[k]["id"]
+    return newID
 
 @app.route("/want")
 def want():
@@ -35,6 +41,8 @@ def want():
         return json.dumps({"begin": False, "error": "empty id"})
 
     curID = request.args.get('id')
+    ic("want", curID)
+
 
     if mainAdmin.countGamers==0: # принимаем первого игрока
         mainAdmin.gamers[curID] = {"id": curID,
@@ -64,24 +72,20 @@ def want():
         print("Unrecognised want request")
         return json.dumps({"begin": False, "error": "Unrecognised want request"})
 
-# up works
-
 @app.route("/begin", methods=['GET'])
 def begin():
     if not "id" in request.args:
         return json.dumps({"start": False, "error": "empty id"})
     curID = request.args.get('id')
+    ic("begin", curID)
     return json.dumps({"start": curID == mainAdmin.activeGamer})
-
-
-
 
 @app.route("/step", methods=['GET'])
 def step():
     if not "id" in request.args:
         return json.dumps({"error": "empty id"})
     curID = request.args.get('id')
-
+    ic("shot", curID)
 
     if curID == mainAdmin.activeGamer:
         if not "step_x" in request.args:
@@ -97,6 +101,7 @@ def wait_shot():
     if not "id" in request.args:
         return json.dumps({"error": "empty id"})
     curID = request.args.get('id')
+    ic("wait_shot", curID)
 
     ic(mainAdmin.activeGamer)
     if curID != mainAdmin.activeGamer:
@@ -110,52 +115,40 @@ def wait_shot():
     else:
         return json.dumps({"ans": "error", "error": "It is your step. Make shot in '/shot' url"})
 
-def switchActive(curID):
-    x = mainAdmin.gamers.copy()
-    x.pop(curID)
-
-    z = x.keys()
-    k=[a for a in z][0]
-    newID = mainAdmin.gamers[k]["id"]
-    return newID
-
-
 @app.route("/ans_shot", methods=['GET'])
 def ans_shot():
     if not "id" in request.args:
         return json.dumps({"error": "empty id"})
     curID = request.args.get('id')
+    ic("ans_shot", curID)
 
     if curID != mainAdmin.activeGamer:
             ans = request.args.get('ans')
 
-            if 'endGame' in request.args:
+            if request.args.get('endGame')==True:
                 mainAdmin.endGame = True
                 mainAdmin.countGamers=0
+                print("End Game")
 
             if ans == answers["miss"]:
                 mainAdmin.activeGamer = curID
                 ic(curID, mainAdmin.activeGamer)
 
-            mainAdmin.ans_step = ans
+            mainAdmin.data = {a[0]:a[1] for a in zip(request.args.keys(), request.args.values())}
+            ic(mainAdmin.data)
             return json.dumps({"ans": "Answer recieved"})
     else:
         return json.dumps({"ans": "error", "error": "wait answer in 'wait_ans' url"})
-
 
 @app.route("/wait_ans", methods=['GET'])
 def wait_ans():
     if not "id" in request.args:
         return json.dumps({"error": "empty id"})
     curID = request.args.get('id')
+    ic("wait_ans", curID)
 
-    if mainAdmin.ans_step != None:
-        ans = {"ans": mainAdmin.ans_step}
-
-        if mainAdmin.endGame:
-            ans["endGame"]=True
-
-        return json.dumps(ans)
+    if mainAdmin.data != None:
+        return json.dumps(mainAdmin.data)
     else:
         return json.dumps({"ans": "wait"})
 

@@ -92,15 +92,15 @@ def wait_shot():
     ic(x,y)
     return x,y
 
-def make_ans(ans="miss", endGame=False):
+def make_ans(ans="miss", ship = False, endGame=False):
     ic("make_ans")
     data = {
         "id": myID,
         "ans": ans,
+        "ship": ship,
+        "endGame": endGame
     }
-    if endGame:
-        data["endGame"] = endGame
-
+    ic(data)
     myRequest(baseUrl + urlAns, "ans", data)
 
 def wait_ans():
@@ -114,8 +114,9 @@ def wait_ans():
         ans, data = myRequest(baseUrl + urlWaitAns, "ans", {
             "id": myID,
         })
-    endGame = "endGame" in data
-    return ans, endGame
+    endGame = data["endGame"]
+    ship = data["ship"]
+    return ans, ship, endGame
 
 
 if __name__ == '__main__':
