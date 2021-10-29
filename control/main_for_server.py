@@ -406,15 +406,17 @@ class Player(object):
         sx, sy = self.get_input('shot')
         return sx, sy
 
-    def ser_shot_result(self, shot_res, sx, sy):
-
+    def receive_remote(self, shot_res, rec_ship, sx, sy):
+        '''
+            мы убиваем удаленный корабль
+        '''
         if shot_res == 'miss':
             self.field.radar[sx][sy] = Cell.miss_cell
 
         if shot_res == 'get':
             self.field.radar[sx][sy] = Cell.damaged_ship
 
-        if type(shot_res) == Ship:
+        if type(rec_ship) == Ship:
             destroyed_ship = shot_res
             self.field.mark_destroyed_ship(destroyed_ship, FieldPart.radar)
             self.enemy_ships.remove(destroyed_ship.size)
@@ -429,7 +431,9 @@ class Player(object):
     # как и в жизни игрок должен отвечать (возвращать) результат выстрела
     # попал (return "get") промазал (return "miss") или убил корабль (тогда возвращаем целиком корабль)
     # так проще т.к. сразу знаем и координаты корабля и его длину
-    def receive_shot(self, shot):
+
+    # сервер убивает наш корабль
+    def receive_local(self, shot):
 
         sx, sy = shot
 
@@ -440,14 +444,14 @@ class Player(object):
             if ship.hp <= 0:
                 self.field.mark_destroyed_ship(ship, FieldPart.main)
                 self.ships.remove(ship)
-                return 'kill'
+                return 'kill', ship
 
             self.field.map[sx][sy] = Cell.damaged_ship
-            return 'get'
+            return 'get', ship
 
         else:
             self.field.map[sx][sy] = Cell.miss_cell
-            return 'miss'
+            return 'miss', None
 
 
 class Ship:
@@ -507,31 +511,24 @@ if __name__ == '__main__':
     end_flag = False
 
     while True:
-
-    #if game.status == 'in game':
-        ### запросить статус игрока Global_active
-
-        # в основной части игры мы очищаем экран добавляем сообщение для текущего игрока и отрисовываем игру
         Game.clear_screen()
-        game.current_player.message.append("Ждём приказа: ")
         game.draw()
         # очищаем список сообщений для игрока. В следующий ход он уже получит новый список сообщений
         game.current_player.message.clear()
         # ждём результата выстрела на основе выстрела текущего игрока в следующего
 
         if (globStatus_active):
+            game.current_player.message.append("Ждём приказа: ")
             x, y = game.current_player.make_shot()
-            serv_shot((x,y))
-            ans_from_serv, end_flag = wait_ans()
-            shot_result = game.current_player.ser_shot_result(ans_from_serv, x, y)
+            serv_shot(x,y)
+            ans_from_serv, assum_ship, end_flag = wait_ans()
+            shot_result = game.current_player.receive_remote(ans_from_serv, assum_ship, x, y)
+            Game.clear_screen()
+            game.draw()
         # в зависимости от результата накидываем сообщений и текущему игроку и следующему
         # ну и если промазал - передаем ход следующему игроку.
             if shot_result == 'miss':
-                #game.next_player.message.append(f'На этот раз {game.current_player.name}, промахнулся!')
-                #game.next_player.message.append('Ваш ход {}!'.format(game.next_player.name))
-                # ask server to change the status
-                #game.switch_players()
-                globStatus_active != globStatus_active
+                globStatus_active = False
                 continue
 
             elif shot_result == 'retry':
@@ -546,11 +543,17 @@ if __name__ == '__main__':
 
         if not globStatus_active:
             #ask coordinates shot from server
-            sss = wait_shot()
-            send_str = game.current_player.receive_shot(sss)
-            make_ans(send_str, (len(game.current_player.ships) == 0))
+            xx, yy = wait_shot()
+            xx = int(xx)
+            yy = int(yy)
+            send_str, giv_ship = game.current_player.receive_local((xx,yy))
+            print(f"Result of shoot: {send_str}")
+            Game.clear_screen()
+            game.draw()
+            make_ans(send_str, giv_ship, (len(game.current_player.ships) == 0))
             if send_str == 'miss':
-                globStatus_active != globStatus_active
+                globStatus_active = True
+                continue
 
         if len(game.current_player.ships) == 0 or end_flag == 1:
             Game.clear_screen()
@@ -561,7 +564,7 @@ if __name__ == '__main__':
                 print('Сожалеем, но Вы проиграли!')
             break
 
-    time.sleep(0.5)
+        time.sleep(0.5)
 
     print('Спасибо за игру!')
     input('')
