@@ -2,7 +2,7 @@ import os
 from random import randrange
 from random import choice
 import time
-from client import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
+from client2 import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
 
 
 class FieldPart(object):
@@ -498,9 +498,9 @@ if __name__ == '__main__':
     # создаем саму игру и погнали в бесконечном цикле
     #player1 = Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1)
 
-    player1 = Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1)
+    player2 = Player(name='DarthVader', is_ai=False, auto_ship=True, skill=1)
     game = Game()
-    game.add_player(player1)
+    game.add_player(player2)
     want()
 
     globStatus_active = begin()
