@@ -56,7 +56,6 @@ def want():
         begin,_ = myRequest(baseUrl + urlWant, "begin", data={
             "id": myID,
         })
-        ic(begin)
 
     return True
 
@@ -66,7 +65,6 @@ def begin():
     start,_ = myRequest(baseUrl + urlBegin, "start", data={
         "id": myID,
     })
-    ic(start)
     return start
 
 def shot(step=(1,1)):
@@ -79,11 +77,14 @@ def shot(step=(1,1)):
 def wait_shot():
     ic("wait_shot")
     ans = "wait"
+    ans, data = myRequest(baseUrl + urlWaitStep, "ans", {
+        "id": myID,
+    })
+    ic(data)
     while ans != "OK":
         ans, data = myRequest(baseUrl + urlWaitStep, "ans", {
             "id": myID,
         })
-        ic(ans, data)
 
     step = data["step"]
     return step
@@ -102,11 +103,14 @@ def make_ans(ans="miss", endGame=False):
 def wait_ans():
     ic("wait_ans")
     ans = "wait"
+    ans, data = myRequest(baseUrl + urlWaitAns, "ans", {
+        "id": myID,
+    })
+    ic(data)
     while ans == "wait" or ans == "error":
         ans, data = myRequest(baseUrl + urlWaitAns, "ans", {
             "id": myID,
         })
-        ic(data)
     endGame = "endGame" in data
     return ans, endGame
 
