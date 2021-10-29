@@ -446,14 +446,14 @@ class Player(object):
             if ship.hp <= 0:
                 self.field.mark_destroyed_ship(ship, FieldPart.main)
                 self.ships.remove(ship)
-                return ship
+                return 'kill', ship
 
             self.field.map[sx][sy] = Cell.damaged_ship
-            return 'get'
+            return 'get', ship
 
         else:
             self.field.map[sx][sy] = Cell.miss_cell
-            return 'miss'
+            return 'miss', None
 
 
 class Ship:
