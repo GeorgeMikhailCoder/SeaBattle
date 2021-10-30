@@ -2,6 +2,7 @@ import requests
 import numpy as np
 from time import sleep
 from icecream import ic
+from control.Ship import Ship
 
 field = np.array([[np.random.randint(0,2) for i in range(10)] for j in range(10)])
 baseUrl = "http://127.0.0.1:5000/"
@@ -92,7 +93,7 @@ def wait_shot():
     ic(x,y)
     return x,y
 
-def make_ans(ans="miss", ship = Ship({"qwe":1, "asd":2}), endGame=False):
+def make_ans(ans="miss", ship=None, endGame=False):
     ic("make_ans")
     if ship!=None:
         ship = ship.__as_json__()

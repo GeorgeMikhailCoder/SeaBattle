@@ -3,40 +3,8 @@ from random import randrange
 from random import choice
 import time
 from net.client import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
-from net.UniversalDictClass import DictClass
-
-class FieldPart(object):
-    main = 'map'
-    radar = 'radar'
-    weight = 'weight'
-
-
-# здесь просто задаем цвета. Они не соответствуют своим названиям, но главное всё сгруппировано в одном месте
-# при желании цвета можно легко поменять не колупаясь во всей логике приложения
-class Color:
-    yellow2 = '\033[1;35m'
-    reset = '\033[0m'
-    blue = '\033[0;34m'
-    yellow = '\033[1;93m'
-    red = '\033[1;93m'
-    miss = '\033[0;35m'
-
-
-# функция которая окрашивает текст в заданный цвет.
-def set_color(text, color):
-    return color + text + Color.reset
-
-
-# класс "клетка". Здесь мы задаем и визуальное отображение клеток и их цвет.
-# по визуальному отображению мы проверяем какого типа клетка. Уж такая реализация.
-# По этой причине нельзя обозначать одним символом два разных типа. Иначе в логике возникнет путаница.
-class Cell(object):
-    empty_cell = set_color(' ', Color.yellow2)
-    ship_cell = set_color('■', Color.blue)
-    destroyed_ship = set_color('X', Color.yellow)
-    damaged_ship = set_color('□', Color.red)
-    miss_cell = set_color('•', Color.miss)
-
+from PaintPrimitives import Cell, FieldPart
+from Ship import Ship
 
 # поле игры. состоит из трех частей: карта где расставлены корабли игрока.
 # радар на котором игрок отмечает свои ходы и результаты
@@ -454,43 +422,6 @@ class Player(object):
             return 'miss', None
 
 
-class Ship(DictClass):
-
-    def __init__(self, size, x, y, rotation):
-        super().__init__()
-        self.size = size
-        self.hp = size
-        self.x = x
-        self.y = y
-        self.rotation = rotation
-        self.set_rotation(rotation)
-
-    def __str__(self):
-        return Cell.ship_cell
-
-    def set_position(self, x, y, r):
-        self.x = x
-        self.y = y
-        self.set_rotation(r)
-
-    def set_rotation(self, r):
-
-        self.rotation = r
-
-        if self.rotation == 0:
-            self.width = self.size
-            self.height = 1
-        elif self.rotation == 1:
-            self.width = 1
-            self.height = self.size
-        elif self.rotation == 2:
-            self.y = self.y - self.size + 1
-            self.width = self.size
-            self.height = 1
-        elif self.rotation == 3:
-            self.x = self.x - self.size + 1
-            self.width = 1
-            self.height = self.size
 
 
 if __name__ == '__main__':
