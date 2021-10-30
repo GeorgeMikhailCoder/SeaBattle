@@ -123,7 +123,9 @@ def wait_ans():
             "id": myID,
         })
     endGame = data["endGame"]
-    if ans == "miss":
+
+    ic(data)
+    if ans == "miss" or data["ship"]==None:
         ship = None
     else:
         ship = Ship().__from_json__(data["ship"])
