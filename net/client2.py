@@ -102,6 +102,8 @@ def wait_shot():
 
 def make_ans(ans="miss", ship = Ship({"zxc":3}), endGame=False):
     ic("make_ans")
+    if ship!=None:
+        ship = ship.__as_json__()
     data = {
         "id": myID,
         "ans": ans,
