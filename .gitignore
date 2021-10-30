@@ -1,2 +1,4 @@
+net/client2.py
+net/client_old.py
 .idea
 *pycache*

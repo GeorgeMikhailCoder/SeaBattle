@@ -1,5 +1,5 @@
 from net.UniversalDictClass import DictClass
-from PaintPrimitives import  Cell
+from control.PaintPrimitives import Cell
 
 
 class Ship(DictClass):
