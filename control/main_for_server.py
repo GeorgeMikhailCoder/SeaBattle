@@ -3,7 +3,7 @@ from random import randrange
 from random import choice
 import time
 from client import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
-
+from UniversalDictClass import DictClass
 
 class FieldPart(object):
     main = 'map'
@@ -454,7 +454,7 @@ class Player(object):
             return 'miss', None
 
 
-class Ship:
+class Ship(DictClass):
 
     def __init__(self, size, x, y, rotation):
 
