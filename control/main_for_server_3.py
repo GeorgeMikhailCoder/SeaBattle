@@ -457,7 +457,7 @@ class Player(object):
 class Ship(DictClass):
 
     def __init__(self, size, x, y, rotation):
-
+        super().__init__()
         self.size = size
         self.hp = size
         self.x = x
@@ -547,6 +547,7 @@ if __name__ == '__main__':
             xx = int(xx)
             yy = int(yy)
             send_str, giv_ship = game.current_player.receive_local((xx,yy))
+            print(giv_ship)
             print(f"Result of shoot: {send_str}")
             Game.clear_screen()
             game.draw()

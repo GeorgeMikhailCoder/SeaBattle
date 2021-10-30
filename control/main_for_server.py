@@ -457,7 +457,7 @@ class Player(object):
 class Ship(DictClass):
 
     def __init__(self, size, x, y, rotation):
-
+        super().__init__()
         self.size = size
         self.hp = size
         self.x = x
