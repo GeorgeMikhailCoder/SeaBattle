@@ -107,7 +107,7 @@ def make_ans(ans="miss", ship = Ship({"qwe":1, "asd":2}), endGame=False):
     data = {
         "id": myID,
         "ans": ans,
-        "ship": ship.__as_json__(),
+        "ship": ship,
         "endGame": endGame
     }
     ic(data)
