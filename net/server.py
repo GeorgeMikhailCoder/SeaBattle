@@ -135,7 +135,7 @@ def ans_shot():
                 ic(curID, mainAdmin.activeGamer)
 
             mainAdmin.data = {a[0]:a[1] for a in zip(request.args.keys(), request.args.values())}
-            ic(mainAdmin.data)
+            ic("ans recieved: ", mainAdmin.data)
             return json.dumps({"ans": "Answer recieved"})
     else:
         return json.dumps({"ans": "error", "error": "wait answer in 'wait_ans' url"})
@@ -148,7 +148,10 @@ def wait_ans():
     ic("wait_ans", curID)
 
     if mainAdmin.data != None:
-        return json.dumps(mainAdmin.data)
+        tmpDict = mainAdmin.data
+        mainAdmin.data = None
+        ic("ans send: ", tmpDict)
+        return json.dumps(tmpDict)
     else:
         return json.dumps({"ans": "wait"})
 

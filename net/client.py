@@ -15,6 +15,14 @@ urlWaitAns = "wait_ans"
 
 myID = "12"
 
+from UniversalDictClass import DictClass
+class Ship(DictClass):
+
+    def __init__(self, d=None):
+        super().__init__(d)
+
+
+
 def checkShot(step):
     x,y = step
     return "miss"
@@ -92,12 +100,12 @@ def wait_shot():
     ic(x,y)
     return x,y
 
-def make_ans(ans="miss", ship = False, endGame=False):
+def make_ans(ans="miss", ship = Ship({"qwe":1, "asd":2}), endGame=False):
     ic("make_ans")
     data = {
         "id": myID,
         "ans": ans,
-        "ship": ship,
+        "ship": ship.__as_json__(),
         "endGame": endGame
     }
     ic(data)
@@ -115,7 +123,7 @@ def wait_ans():
             "id": myID,
         })
     endGame = data["endGame"]
-    ship = data["ship"]
+    ship = Ship().__from_json__(data["ship"])
     return ans, ship, endGame
 
 
@@ -123,11 +131,11 @@ if __name__ == '__main__':
     want()
     begin()
 
-    for i in range(5):
-        shot()
-        wait_ans()
-        wait_shot()
-        make_ans()
+    # for i in range(5):
+    shot()
+    wait_ans()
+    wait_shot()
+    make_ans()
 
 
     print("end")
