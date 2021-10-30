@@ -6,10 +6,10 @@ class DictClass:
 
     def __str__(self):
         str = ""
-        for attr in dir( self ):
+        for attr in dir(self):
             if attr[0] != '_' and attr[0:5] != "html_":
-                str+= attr.__str__() + ": " + \
-                      getattr(self, attr.__str__()).__str__() + " \n"
+                str += attr.__str__() + ": " + \
+                       getattr(self, attr.__str__()).__str__() + " \n"
         return str
 
     def __from_dict__(self, d):
@@ -17,15 +17,13 @@ class DictClass:
             setattr(self, key, value)
         return self
 
-
     def __from_json__(self, str):
         import json
         return self.__from_dict__(dict(json.loads(str)))
 
-
     def __as_dict__(self):
         res = dict()
-        for attr in dir( self ):
+        for attr in vars(self):
             if attr[0] != '_':
                 res[attr.__str__()] = getattr(self, attr.__str__())
         return res
