@@ -19,7 +19,7 @@ class Cell(object):
     miss_cell = set_color('•', Color.miss)
     '''
 
-from .main import Player
+from .origin import Player
 
 p = Player()
 

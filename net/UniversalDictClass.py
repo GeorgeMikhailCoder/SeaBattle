@@ -25,7 +25,7 @@ class DictClass:
 
     def __as_dict__(self):
         res = dict()
-        for attr in dir( self ):
+        for attr in vars( self ):
             if attr[0] != '_':
                 res[attr.__str__()] = getattr(self, attr.__str__())
         return res

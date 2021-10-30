@@ -15,13 +15,6 @@ urlWaitAns = "wait_ans"
 
 myID = "23"
 
-from UniversalDictClass import DictClass
-class Ship(DictClass):
-
-    def __init__(self, d=None):
-        super().__init__(d)
-
-
 
 def checkShot(step):
     x,y = step
