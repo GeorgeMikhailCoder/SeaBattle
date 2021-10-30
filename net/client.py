@@ -123,7 +123,12 @@ def wait_ans():
             "id": myID,
         })
     endGame = data["endGame"]
-    ship = Ship().__from_json__(data["ship"])
+
+    if ans == "miss":
+        ship = None
+    else:
+        ship = Ship().__from_json__(data["ship"])
+
     return ans, ship, endGame
 
 

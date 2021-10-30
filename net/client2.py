@@ -123,7 +123,10 @@ def wait_ans():
             "id": myID,
         })
     endGame = data["endGame"]
-    ship = Ship().__from_json__(data["ship"])
+    if ans == "miss":
+        ship = None
+    else:
+        ship = Ship().__from_json__(data["ship"])
     return ans, ship, endGame
 
 
@@ -131,8 +134,10 @@ if __name__ == '__main__':
     want()
     begin()
 
+    from time import sleep
     # for i in range(5):
     wait_shot()
+    sleep(2)
     make_ans()
     shot()
     wait_ans()
