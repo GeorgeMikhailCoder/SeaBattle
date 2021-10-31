@@ -1,9 +1,10 @@
 from flask import Flask, request
 import json
 from icecream import ic
-app = Flask(__name__)
+import os
+import logging
 
-class ClientConnection:
+class ClientAcceptor:
     app = None
     answers = {
         "kill": "kill",
@@ -29,7 +30,11 @@ class ClientConnection:
         self.app.add_url_rule("/ans_shot", "ans_shot", self.ans_shot)
         self.app.add_url_rule("/wait_ans", "wait_ans", self.wait_ans)
         self.mainAdmin = self.Agregator()
-        
+
+        # self.__log_file_path__ = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'log_conf.conf')
+        # logging.config.fileConfig(self.__log_file_path__)
+        # self.logger = logging.getLogger("Server")
+
 
     def run(self):
         self.app.run()
@@ -158,11 +163,11 @@ class ClientConnection:
             return json.dumps({"ans": "wait"})
 
 def runServer():
-    s = ClientConnection()
+    s = ClientAcceptor()
     s.run()
 
 if __name__ == '__main__':
-    s=ClientConnection()
+    s=ClientAcceptor()
     s.run()
 
 

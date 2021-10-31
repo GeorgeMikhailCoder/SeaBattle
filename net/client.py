@@ -4,6 +4,9 @@ from time import sleep
 from icecream import ic
 from control.Ship import Ship
 
+import os
+import logging
+
 class ServerConnection:
 
     def __id__(self):
@@ -19,6 +22,10 @@ class ServerConnection:
         self.urlWaitAns = "wait_ans"
         self.baseUrl = serv_url
         self.myID = self.__id__()
+
+        # self.__log_file_path__ = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'log_conf.conf')
+        # logging.config.fileConfig(self.__log_file_path__)
+        # self.logger = logging.getLogger("Client " + str(self.myID))
 
     def __makeGet__(self, url, data=None):
         data["id"] = self.myID
@@ -90,7 +97,7 @@ class ServerConnection:
     
     def make_ans(self, ans="miss", ship=None, endGame=False):
         ic("make_ans")
-        if ship!=None:
+        if ship:
             ship = ship.__as_json__()
         data = {
             "id": self.myID,
