@@ -112,7 +112,7 @@ class ServerConnection:
             ans, data = self.__myRequest__(self.baseUrl + self.urlWaitAns, "ans", {
                 "id": self.myID,
             })
-        endGame = data["endGame"]
+        endGame = data["endGame"] == "True"
     
         ic(data)
         if ans == "miss" or data["ship"]==None:

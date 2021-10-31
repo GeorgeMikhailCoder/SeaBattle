@@ -300,7 +300,8 @@ class Game(object):
                     return True
 
     def draw(self):
-        if not self.current_player.is_ai:
+        #if not self.current_player.is_ai:
+        if True:
             self.current_player.field.draw_field(FieldPart.main)
             self.current_player.field.draw_field(FieldPart.radar)
             # для веса раскомментировать
@@ -372,7 +373,18 @@ class Player(object):
 
     # при совершении выстрела мы будем запрашивать ввод данных с типом shot
     def make_shot(self):
+        mistake_counter = 0
+        n = 50
         sx, sy = self.get_input('shot')
+
+        while sx == 500 and sy == 0:
+            mistake_counter += 1
+            print(f'Ошибка ввода, осталось {n-mistake_counter} попыток')
+            sx, sy = self.get_input('shot')
+            if mistake_counter >= n:
+                print("Допустимое число попыток использовано, игра завершена")
+                quit()
+
         return sx, sy
 
     def receive_remote(self, shot_res, rec_ship, sx, sy):
@@ -435,7 +447,7 @@ if __name__ == '__main__':
     # создаем саму игру и погнали в бесконечном цикле
     #player1 = Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1)
 
-    player1 = Player(name='Obi Wan', is_ai=False, auto_ship=True, skill=1)
+    player1 = Player(name='Obi Wan', is_ai=True, auto_ship=True, skill=1)
     game = Game()
     game.add_player(player1)
     server = ServerConnection()
@@ -451,7 +463,7 @@ if __name__ == '__main__':
         game.current_player.message.clear()
         # ждём результата выстрела на основе выстрела текущего игрока в следующего
 
-        if (globStatus_active):
+        if globStatus_active and not end_flag:
             game.current_player.message.append("Ждём приказа: ")
             x, y = game.current_player.make_shot()
             server.shot(x,y)
@@ -461,6 +473,8 @@ if __name__ == '__main__':
             game.draw()
         # в зависимости от результата накидываем сообщений и текущему игроку и следующему
         # ну и если промазал - передаем ход следующему игроку.
+            print(type(end_flag), ' ', end_flag)
+
             if shot_result == 'miss':
                 globStatus_active = False
                 continue
@@ -475,7 +489,8 @@ if __name__ == '__main__':
                 game.current_player.message.append('Корабль противника уничтожен!')
                 continue
 
-        if not globStatus_active:
+        if not globStatus_active and not end_flag:
+            print(type(end_flag), ' ', end_flag)
             #ask coordinates shot from server
             xx, yy = server.wait_shot()
             xx = int(xx)
@@ -489,10 +504,11 @@ if __name__ == '__main__':
                 globStatus_active = True
                 continue
 
-        if len(game.current_player.ships) == 0 or end_flag == 1:
+        print(type(end_flag), ' ', end_flag)
+        if len(game.current_player.ships) == 0 or end_flag == 1  or len(game.current_player.enemy_ships) == 0:
             Game.clear_screen()
             game.current_player.field.draw_field(FieldPart.main)
-            if end_flag == 1:
+            if end_flag == 1 or len(game.current_player.enemy_ships) == 0:
                 print(f'{game.current_player.name} выиграл матч! Поздравления!')
             else:
                 print('Сожалеем, но Вы проиграли!')

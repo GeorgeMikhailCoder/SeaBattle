@@ -224,27 +224,8 @@ class Game(object):
         # высчитываем вес для клеток поля (это нужно только для ИИ, но в целом при расширении возможностей
         # игры можно будет например на основе этого давать подсказки игроку).
         player.field.recalculate_weight_map(player.enemy_ships)
+        # добавлено для одного игрока в одной программе
         self.current_player = player
-
-    # # при старте игры назначаем текущего и следующего игрока
-    # def start_game(self):
-    #
-    #self.current_player = self.players[0]
-    #     self.next_player = self.players[1]
-    #
-    # # функция переключения статусов
-    # def status_check(self):
-    #     # переключаем с prepare на in game если в игру добавлено два игрока.
-    #     # далее стартуем игру
-    #     if self.status == 'prepare' and len(self.players) >= 2:
-    #         self.status = 'in game'
-    #         self.start_game()
-    #         return True
-    #     # переключаем в статус game over если у следующего игрока осталось 0 кораблей.
-    #     if self.status == 'in game' and len(self.next_player.ships) == 0:
-    #         self.status = 'game over'
-    #         return True
-
 
     def ships_setup(self, player):
         # делаем расстановку кораблей по правилам заданным в классе Game
@@ -262,7 +243,6 @@ class Game(object):
                 Game.clear_screen()
                 if player.auto_ship_setup is not True:
                     player.field.draw_field(FieldPart.main)
-                    #player.message.append('Куда поставить {} корабль: '.format(ship_size))
                     player.message.append(f'Введите левую верхнюю координату и ориентацию (H - горизонтально или V - вертикально) для корабля №{i} длиной {ship_size} ')
                     for _ in player.message:
                         print(_)
@@ -274,7 +254,7 @@ class Game(object):
                 x, y, r = player.get_input('ship_setup')
                 # если пользователь ввёл какую-то ерунду функция возвратит нули, значит без вопросов делаем continue
                 # фактически просто просим еще раз ввести координаты
-                if x + y + r == 0:
+                if x + y + r < 0:
                     continue
 
                 ship.set_position(x, y, r)
@@ -300,17 +280,15 @@ class Game(object):
                     return True
 
     def draw(self):
-        if not self.current_player.is_ai:
+        #if not self.current_player.is_ai:
+        if True:
             self.current_player.field.draw_field(FieldPart.main)
             self.current_player.field.draw_field(FieldPart.radar)
-            # для веса раскомментировать
+
+            # для отображения весовой матрицы ИИ-противника раскомментировать
             #self.current_player.field.draw_field(FieldPart.weight)
         for line in self.current_player.message:
             print(line)
-
-    # игроки меняются вот так вот просто.
-    # def switch_players(self):
-    #     self.current_player, self.next_player = self.next_player, self.current_player
 
     @staticmethod
     #очистка консоли для виндоус по умолчанию
@@ -372,7 +350,13 @@ class Player(object):
 
     # при совершении выстрела мы будем запрашивать ввод данных с типом shot
     def make_shot(self):
+        mistake_counter = 0
+        n = 50
         sx, sy = self.get_input('shot')
+        while sx == 500 and sy == 0:
+            mistake_counter += 1
+            print(f'Ошибка ввода, осталось {n-mistake_counter} попыток')
+            sx, sy = self.get_input('shot')
         return sx, sy
 
     def receive_remote(self, shot_res, rec_ship, sx, sy):
@@ -396,11 +380,6 @@ class Player(object):
         self.field.recalculate_weight_map(self.enemy_ships)
 
         return shot_res
-
-    # здесь игрок будет принимать выстрел
-    # как и в жизни игрок должен отвечать (возвращать) результат выстрела
-    # попал (return "get") промазал (return "miss") или убил корабль (тогда возвращаем целиком корабль)
-    # так проще т.к. сразу знаем и координаты корабля и его длину
 
     # сервер убивает наш корабль
     def receive_local(self, shot):
@@ -435,7 +414,7 @@ if __name__ == '__main__':
     # создаем саму игру и погнали в бесконечном цикле
     #player1 = Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1)
 
-    player1 = Player(name='Darth-Vader', is_ai=False, auto_ship=True, skill=1)
+    player1 = Player(name='Darth-Vader', is_ai=True, auto_ship=True, skill=1)
     game = Game()
     game.add_player(player1)
     server = ServerConnection()
@@ -451,21 +430,19 @@ if __name__ == '__main__':
         game.current_player.message.clear()
         # ждём результата выстрела на основе выстрела текущего игрока в следующего
 
-        if (globStatus_active):
+        if globStatus_active:
             game.current_player.message.append("Ждём приказа: ")
             x, y = game.current_player.make_shot()
             server.shot(x,y)
             ans_from_serv, assum_ship, end_flag = server.wait_ans()
-
             shot_result = game.current_player.receive_remote(ans_from_serv, assum_ship, x, y)
-            Game.clear_screen()
-            game.draw()
+
         # в зависимости от результата накидываем сообщений и текущему игроку и следующему
         # ну и если промазал - передаем ход следующему игроку.
+            print(type(end_flag), ' ', end_flag)
             if shot_result == 'miss':
                 globStatus_active = False
                 continue
-
             elif shot_result == 'retry':
                 game.current_player.message.append('Попробуйте еще раз!')
                 continue
@@ -478,22 +455,21 @@ if __name__ == '__main__':
 
         if not globStatus_active:
             #ask coordinates shot from server
+            print(type(end_flag), ' ', end_flag)
             xx, yy = server.wait_shot()
             xx = int(xx)
             yy = int(yy)
             send_str, giv_ship = game.current_player.receive_local((xx,yy))
             print(f"Result of shoot: {send_str}")
-            Game.clear_screen()
-            game.draw()
             server.make_ans(send_str, giv_ship, (len(game.current_player.ships) == 0))
             if send_str == 'miss':
                 globStatus_active = True
                 continue
 
-        if len(game.current_player.ships) == 0 or end_flag == 1:
+        if len(game.current_player.ships) == 0 or end_flag == 1 or len(game.current_player.enemy_ships) == 0:
             Game.clear_screen()
             game.current_player.field.draw_field(FieldPart.main)
-            if end_flag == 1:
+            if end_flag == 1 or len(game.current_player.enemy_ships) == 0:
                 print(f'{game.current_player.name} выиграл матч! Поздравления!')
             else:
                 print('Сожалеем, но Вы проиграли!')
