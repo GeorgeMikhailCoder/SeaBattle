@@ -2,9 +2,8 @@ import os
 from random import randrange
 from random import choice
 import time
-from Net.client2 import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
 
-from net.client import ServerConnection
+from Net.client import ServerConnection
 from PaintPrimitives import Cell, FieldPart
 from Ship import Ship
 
@@ -468,7 +467,7 @@ if __name__ == '__main__':
                 globStatus_active = True
                 continue
 
-        if len(game.current_player.ships) == 0 or end_flag == 1 or len(game.current_player.enemy_ships) == 0:
+        if len(game.current_player.ships) == 0 or end_flag or len(game.current_player.enemy_ships) == 0:
             Game.clear_screen()
             game.current_player.field.draw_field(FieldPart.main)
             if end_flag == 1 or len(game.current_player.enemy_ships) == 0:

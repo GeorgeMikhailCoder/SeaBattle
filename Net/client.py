@@ -136,10 +136,11 @@ class ServerConnection:
         self.__lg__("wait_ans accepted data: ", data)
         if ans == "miss" or data["ship"]==None:
             ship = None
+            self.__lg__("wait_ans ship: ", None)
         else:
             ship = Ship().__from_json__(data["ship"])
+            self.__lg__("wait_ans ship: ", ship.__as_dict__())
 
-        self.__lg__("wait_ans ship: ", ship)
         return ans, ship, endGame
 
 
