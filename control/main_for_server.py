@@ -385,7 +385,7 @@ class Player(object):
             self.field.radar[sx][sy] = Cell.damaged_ship
 
         if type(rec_ship) == Ship:
-            destroyed_ship = shot_res
+            destroyed_ship = rec_ship
             self.field.mark_destroyed_ship(destroyed_ship, FieldPart.radar)
             self.enemy_ships.remove(destroyed_ship.size)
             shot_res = 'kill'
