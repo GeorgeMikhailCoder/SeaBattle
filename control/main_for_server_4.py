@@ -2,11 +2,7 @@ import os
 from random import randrange
 from random import choice
 import time
-<<<<<<< HEAD
-from Net.client2 import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
-=======
 from net.client import ServerConnection
->>>>>>> c381c6948ae29984a80861637f1fcbf4dd5cc76a
 from PaintPrimitives import Cell, FieldPart
 from Ship import Ship
 
@@ -106,7 +102,7 @@ class Field(object):
 
         x, y = ship.x, ship.y
         width, height = ship.width, ship.height
-        print("inf frm srvr ",x ,' ',y ,' ', width, ' ', height, '\n')
+        print(x ,' ',y ,' ', width, ' ', height, '\n')
 
         for p_x in range(x - 1, x + height + 1):
             for p_y in range(y - 1, y + width + 1):
@@ -394,7 +390,7 @@ class Player(object):
             destroyed_ship = rec_ship
             self.field.mark_destroyed_ship(destroyed_ship, FieldPart.radar)
             self.enemy_ships.remove(destroyed_ship.size)
-            print(f"Num of ener ships:{self.enemy_ships}",'\n')
+            print(self.enemy_ships)
 
         # после совершения выстрела пересчитаем карту весов
         self.field.recalculate_weight_map(self.enemy_ships)
@@ -439,7 +435,7 @@ if __name__ == '__main__':
     # создаем саму игру и погнали в бесконечном цикле
     #player1 = Player(name='Obi-Wan', is_ai=False, auto_ship=True, skill=1)
 
-    player1 = Player(name='Darth-Vader', is_ai=False, auto_ship=True, skill=1)
+    player1 = Player(name='Obi Wan', is_ai=False, auto_ship=True, skill=1)
     game = Game()
     game.add_player(player1)
     server = ServerConnection()
@@ -460,7 +456,6 @@ if __name__ == '__main__':
             x, y = game.current_player.make_shot()
             server.shot(x,y)
             ans_from_serv, assum_ship, end_flag = server.wait_ans()
-
             shot_result = game.current_player.receive_remote(ans_from_serv, assum_ship, x, y)
             Game.clear_screen()
             game.draw()
@@ -507,4 +502,3 @@ if __name__ == '__main__':
 
     print('Спасибо за игру!')
     input('')
-

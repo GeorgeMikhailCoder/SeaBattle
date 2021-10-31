@@ -1,6 +1,7 @@
 from client import ServerConnection
 from multiprocessing import Process
 from server import runServer
+import os
 
 def player():
     server = ServerConnection()
@@ -18,6 +19,10 @@ def player():
         server.shot()
         server.wait_ans()
 
+def clearLog():
+    for file in os.listdir():
+        if file[:3] == "log":
+            os.remove(file)
 
 
 if __name__ == '__main__':
@@ -25,6 +30,7 @@ if __name__ == '__main__':
     p1 = Process(target=player)
     p2 = Process(target=player)
 
+    clearLog()
     print("Start test")
     s.start()
     p1.start()
