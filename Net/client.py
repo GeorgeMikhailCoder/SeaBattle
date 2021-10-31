@@ -5,7 +5,7 @@ from icecream import ic
 from control.Ship import Ship
 
 import os
-import logging
+import logging.config
 
 class ServerConnection:
 
@@ -23,9 +23,15 @@ class ServerConnection:
         self.baseUrl = serv_url
         self.myID = self.__id__()
 
-        # self.__log_file_path__ = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'log_conf.conf')
-        # logging.config.fileConfig(self.__log_file_path__)
-        # self.logger = logging.getLogger("Client " + str(self.myID))
+        self.__log_file_path__ = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'log_conf.conf')
+        logging.config.fileConfig(self.__log_file_path__)
+        self.logger = logging.getLogger("Client " + str(self.myID))
+
+    def __lg__(self, *args):
+        s = ""
+        for arg in args:
+            s+= str(arg) + " "
+        self.logger.info(s)
 
     def __makeGet__(self, url, data=None):
         data["id"] = self.myID
@@ -54,7 +60,7 @@ class ServerConnection:
         return ans[ansName], ans
     
     def want(self):
-        ic("want sended")
+        self.__lg__("want sended")
         begin = False
         while not begin:
             begin,_ = self.__myRequest__(self.baseUrl + self.urlWant, "begin", data={
@@ -64,7 +70,7 @@ class ServerConnection:
         return True
 
     def begin(self):
-        ic("begin sended")
+        self.__lg__("begin sended")
         start,_ = self.__myRequest__(self.baseUrl + self.urlBegin, "start", data={
             "id": self.myID,
         })
@@ -72,7 +78,7 @@ class ServerConnection:
     
     def shot(self, x=0,y=0):
         step = x,y
-        ic("shot", step)
+        self.__lg__("shot", step)
         self.__myRequest__(self.baseUrl + self.urlStep, "ans", {
             "id": self.myID,
             "step_x": step[0],
@@ -80,23 +86,23 @@ class ServerConnection:
         })
     
     def wait_shot(self):
-        ic("wait_shot")
+        self.__lg__("wait_shot")
         ans = "wait"
         ans, data = self.__myRequest__(self.baseUrl + self.urlWaitStep, "ans", {
             "id": self.myID,
         })
-        ic(data)
+        self.__lg__(data)
         while ans != "OK":
             ans, data = self.__myRequest__(self.baseUrl + self.urlWaitStep, "ans", {
                 "id": self.myID,
             })
     
         x,y = data["step_x"], data["step_y"]
-        ic(x,y)
+        self.__lg__(x,y)
         return x,y
     
     def make_ans(self, ans="miss", ship=None, endGame=False):
-        ic("make_ans")
+        self.__lg__("make_ans")
         if ship:
             ship = ship.__as_json__()
         data = {
@@ -105,23 +111,23 @@ class ServerConnection:
             "ship": ship,
             "endGame": endGame
         }
-        ic(data)
+        self.__lg__(data)
         self.__myRequest__(self.baseUrl + self.urlAns, "ans", data)
     
     def wait_ans(self):
-        ic("wait_ans")
+        self.__lg__("wait_ans")
         ans = "wait"
         ans, data = self.__myRequest__(self.baseUrl + self.urlWaitAns, "ans", {
             "id": self.myID,
         })
-        ic(data)
+        self.__lg__(data)
         while ans == "wait" or ans == "error":
             ans, data = self.__myRequest__(self.baseUrl + self.urlWaitAns, "ans", {
                 "id": self.myID,
             })
         endGame = data["endGame"]
     
-        ic(data)
+        self.__lg__(data)
         if ans == "miss" or data["ship"]==None:
             ship = None
         else:
