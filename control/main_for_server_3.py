@@ -2,6 +2,8 @@ import os
 from random import randrange
 from random import choice
 import time
+from Net.client2 import want, wait_shot, wait_ans, begin, shot as serv_shot, make_ans
+
 from net.client import ServerConnection
 from PaintPrimitives import Cell, FieldPart
 from Ship import Ship

@@ -1,4 +1,4 @@
-from net.UniversalDictClass import DictClass
+from Net.UniversalDictClass import DictClass
 from control.PaintPrimitives import Cell
 
 

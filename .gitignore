@@ -1,4 +1,4 @@
-net/client2.py
-net/client_old.py
+Net/log_out.log
 .idea
 *pycache*
+Net/log*
