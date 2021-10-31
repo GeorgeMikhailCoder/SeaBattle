@@ -13,7 +13,7 @@ class ServerConnection:
     def __init__(self, serv_url="http://127.0.0.1:5000/"):
         self.urlWant = "want"
         self.urlBegin = "begin"
-        self.urlStep = "step"
+        self.urlStep = "shot"
         self.urlWaitStep = "wait_shot"
         self.urlAns = "ans_shot"
         self.urlWaitAns = "wait_ans"
