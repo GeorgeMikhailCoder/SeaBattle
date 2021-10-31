@@ -1,9 +1,10 @@
 import os
+import sys
 from random import randrange
 from random import choice
 import time
 
-from Net.client import ServerConnection
+from client import ServerConnection
 from PaintPrimitives import Cell, FieldPart
 from Ship import Ship
 
@@ -103,7 +104,6 @@ class Field(object):
 
         x, y = ship.x, ship.y
         width, height = ship.width, ship.height
-        print("inf frm srvr ",x ,' ',y ,' ', width, ' ', height, '\n')
 
         for p_x in range(x - 1, x + height + 1):
             for p_y in range(y - 1, y + width + 1):
@@ -187,9 +187,7 @@ class Field(object):
         # ставим туда коэффициент 0. Больше делать нечего - переходим следующей клетке.
         # Иначе прикидываем может ли этот корабль с этой клетки начинаться в какую-либо сторону
         # и если он помещается прбавляем клетке коэф 1.
-        print(available_ships, ' ')
         for i in range(0, len(available_ships)):
-            print(available_ships[i], end=' ')
             ship_size = available_ships[i]
             ship = Ship(ship_size, 1, 1, 0)
             # вот тут бегаем по всем клеткам поля
@@ -204,8 +202,6 @@ class Field(object):
                         ship.set_position(x, y, rotation)
                         if self.check_ship_fits(ship, FieldPart.radar):
                             self.weight[x][y] += 1
-        print("\n")
-
 
 class Game(object):
     letters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
@@ -248,8 +244,7 @@ class Game(object):
                     for _ in player.message:
                         print(_)
                 else:
-                    print(f'Расстановка кораблей игрока {player.name}')
-
+                    pass
                 player.message.clear()
 
                 x, y, r = player.get_input('ship_setup')
@@ -294,6 +289,8 @@ class Game(object):
     @staticmethod
     #очистка консоли для виндоус по умолчанию
     def clear_screen():
+        #sys.platform == "win32"
+        #os.system('cls' if os.name == 'nt' else 'clear')
         os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -371,11 +368,9 @@ class Player(object):
             self.field.radar[sx][sy] = Cell.damaged_ship
 
         if shot_res == 'kill':
-            print("route kill was choosen")
             destroyed_ship = rec_ship
             self.field.mark_destroyed_ship(destroyed_ship, FieldPart.radar)
             self.enemy_ships.remove(destroyed_ship.size)
-            print(f"Num of ener ships:{self.enemy_ships}",'\n')
 
         # после совершения выстрела пересчитаем карту весов
         self.field.recalculate_weight_map(self.enemy_ships)
@@ -440,7 +435,6 @@ if __name__ == '__main__':
 
         # в зависимости от результата накидываем сообщений и текущему игроку и следующему
         # ну и если промазал - передаем ход следующему игроку.
-            print(type(end_flag), ' ', end_flag)
             if shot_result == 'miss':
                 globStatus_active = False
                 continue
@@ -456,18 +450,16 @@ if __name__ == '__main__':
 
         if not globStatus_active:
             #ask coordinates shot from server
-            print(type(end_flag), ' ', end_flag)
             xx, yy = server.wait_shot()
             xx = int(xx)
             yy = int(yy)
             send_str, giv_ship = game.current_player.receive_local((xx,yy))
-            print(f"Result of shoot: {send_str}")
             server.make_ans(send_str, giv_ship, (len(game.current_player.ships) == 0))
             if send_str == 'miss':
                 globStatus_active = True
                 continue
 
-        if len(game.current_player.ships) == 0 or end_flag or len(game.current_player.enemy_ships) == 0:
+        if (len(game.current_player.ships) == 0) or end_flag or (len(game.current_player.enemy_ships) == 0):
             Game.clear_screen()
             game.current_player.field.draw_field(FieldPart.main)
             if end_flag == 1 or len(game.current_player.enemy_ships) == 0:
@@ -476,8 +468,6 @@ if __name__ == '__main__':
                 print('Сожалеем, но Вы проиграли!')
             break
 
-        time.sleep(0.5)
-
     print('Спасибо за игру!')
-    input('')
+    exit()
 
