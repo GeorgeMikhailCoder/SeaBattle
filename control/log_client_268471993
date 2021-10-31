@@ -1,0 +1,662 @@
+2021-11-01 00:58:46,008 | INFO | Client | want sended 
+2021-11-01 00:58:47,015 | INFO | Client | begin sended 
+2021-11-01 00:58:48,029 | INFO | Client | wait_shot 
+2021-11-01 00:58:49,035 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 00:58:50,040 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '6'} 
+2021-11-01 00:58:50,040 | INFO | Client | make_ans 
+2021-11-01 00:58:50,040 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:58:51,053 | INFO | Client | shot (5, 6) 
+2021-11-01 00:58:52,059 | INFO | Client | wait_ans 
+2021-11-01 00:58:53,067 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:58:54,076 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:58:54,077 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:58:54,110 | INFO | Client | wait_shot 
+2021-11-01 00:58:55,114 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '5'} 
+2021-11-01 00:58:55,114 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '5'} 
+2021-11-01 00:58:55,114 | INFO | Client | make_ans 
+2021-11-01 00:58:55,114 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:58:56,125 | INFO | Client | shot (4, 4) 
+2021-11-01 00:58:57,133 | INFO | Client | wait_ans 
+2021-11-01 00:58:58,143 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:58:59,149 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:58:59,149 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:58:59,175 | INFO | Client | wait_shot 
+2021-11-01 00:59:00,179 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '3'} 
+2021-11-01 00:59:00,179 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '3'} 
+2021-11-01 00:59:00,179 | INFO | Client | make_ans 
+2021-11-01 00:59:00,179 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:01,186 | INFO | Client | shot (3, 3) 
+2021-11-01 00:59:02,190 | INFO | Client | wait_ans 
+2021-11-01 00:59:03,194 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:04,199 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:04,199 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:04,231 | INFO | Client | wait_shot 
+2021-11-01 00:59:05,235 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '4'} 
+2021-11-01 00:59:05,235 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '4'} 
+2021-11-01 00:59:05,235 | INFO | Client | make_ans 
+2021-11-01 00:59:05,235 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:06,246 | INFO | Client | shot (6, 5) 
+2021-11-01 00:59:07,253 | INFO | Client | wait_ans 
+2021-11-01 00:59:08,257 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:09,261 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:09,261 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:09,287 | INFO | Client | wait_shot 
+2021-11-01 00:59:10,291 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '3'} 
+2021-11-01 00:59:10,291 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '3'} 
+2021-11-01 00:59:10,291 | INFO | Client | make_ans 
+2021-11-01 00:59:10,291 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:11,304 | INFO | Client | shot (2, 5) 
+2021-11-01 00:59:12,312 | INFO | Client | wait_ans 
+2021-11-01 00:59:13,319 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:14,326 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:14,326 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:14,355 | INFO | Client | wait_shot 
+2021-11-01 00:59:15,359 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '4'} 
+2021-11-01 00:59:15,359 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '4'} 
+2021-11-01 00:59:15,359 | INFO | Client | make_ans 
+2021-11-01 00:59:15,359 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:16,365 | INFO | Client | shot (3, 7) 
+2021-11-01 00:59:17,369 | INFO | Client | wait_ans 
+2021-11-01 00:59:18,374 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:19,377 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:19,378 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:19,408 | INFO | Client | wait_shot 
+2021-11-01 00:59:20,413 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '2'} 
+2021-11-01 00:59:20,413 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '2'} 
+2021-11-01 00:59:20,413 | INFO | Client | make_ans 
+2021-11-01 00:59:20,414 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:21,428 | INFO | Client | shot (7, 3) 
+2021-11-01 00:59:22,435 | INFO | Client | wait_ans 
+2021-11-01 00:59:23,439 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:24,443 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 3, "hp": 2, "x": 7, "y": 3, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 00:59:24,445 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 2, 'x': 7, 'y': 3, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 00:59:24,471 | INFO | Client | shot (7, 2) 
+2021-11-01 00:59:25,475 | INFO | Client | wait_ans 
+2021-11-01 00:59:26,483 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:27,487 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:27,487 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:27,511 | INFO | Client | wait_shot 
+2021-11-01 00:59:28,515 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '7'} 
+2021-11-01 00:59:28,515 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '7'} 
+2021-11-01 00:59:28,515 | INFO | Client | make_ans 
+2021-11-01 00:59:28,515 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:29,522 | INFO | Client | shot (8, 3) 
+2021-11-01 00:59:30,526 | INFO | Client | wait_ans 
+2021-11-01 00:59:31,530 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:32,535 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:32,535 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:32,566 | INFO | Client | wait_shot 
+2021-11-01 00:59:33,570 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '7'} 
+2021-11-01 00:59:33,570 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '7'} 
+2021-11-01 00:59:33,570 | INFO | Client | make_ans 
+2021-11-01 00:59:33,571 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 3, "hp": 2, "x": 2, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 00:59:34,582 | INFO | Client | wait_shot 
+2021-11-01 00:59:35,587 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:36,591 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '7'} 
+2021-11-01 00:59:36,591 | INFO | Client | make_ans 
+2021-11-01 00:59:36,591 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:37,597 | INFO | Client | shot (7, 4) 
+2021-11-01 00:59:38,603 | INFO | Client | wait_ans 
+2021-11-01 00:59:39,607 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:40,614 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 3, "hp": 1, "x": 7, "y": 3, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 00:59:40,614 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 1, 'x': 7, 'y': 3, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 00:59:40,644 | INFO | Client | shot (7, 5) 
+2021-11-01 00:59:41,648 | INFO | Client | wait_ans 
+2021-11-01 00:59:42,653 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:43,658 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 3, "hp": 0, "x": 7, "y": 3, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 00:59:43,658 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 0, 'x': 7, 'y': 3, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 00:59:43,677 | INFO | Client | shot (5, 1) 
+2021-11-01 00:59:44,681 | INFO | Client | wait_ans 
+2021-11-01 00:59:45,685 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:46,689 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:46,689 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:46,709 | INFO | Client | wait_shot 
+2021-11-01 00:59:47,713 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '6'} 
+2021-11-01 00:59:47,713 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '6'} 
+2021-11-01 00:59:47,713 | INFO | Client | make_ans 
+2021-11-01 00:59:47,713 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:48,720 | INFO | Client | shot (4, 8) 
+2021-11-01 00:59:49,723 | INFO | Client | wait_ans 
+2021-11-01 00:59:50,728 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:51,732 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 00:59:51,732 | INFO | Client | wait_ans ship:  None 
+2021-11-01 00:59:51,750 | INFO | Client | wait_shot 
+2021-11-01 00:59:52,753 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '8'} 
+2021-11-01 00:59:52,753 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '8'} 
+2021-11-01 00:59:52,753 | INFO | Client | make_ans 
+2021-11-01 00:59:52,754 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 3, "hp": 1, "x": 2, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 00:59:53,760 | INFO | Client | wait_shot 
+2021-11-01 00:59:54,763 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:55,772 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '9'} 
+2021-11-01 00:59:55,773 | INFO | Client | make_ans 
+2021-11-01 00:59:55,773 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 3, "hp": 0, "x": 2, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 00:59:56,789 | INFO | Client | wait_shot 
+2021-11-01 00:59:57,795 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 00:59:58,805 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '1'} 
+2021-11-01 00:59:58,806 | INFO | Client | make_ans 
+2021-11-01 00:59:58,806 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 00:59:59,819 | INFO | Client | shot (1, 6) 
+2021-11-01 01:00:00,827 | INFO | Client | wait_ans 
+2021-11-01 01:00:01,831 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:02,836 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:02,837 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:02,854 | INFO | Client | wait_shot 
+2021-11-01 01:00:03,857 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '8', 'step_y': '5'} 
+2021-11-01 01:00:03,857 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '8', 'step_y': '5'} 
+2021-11-01 01:00:03,857 | INFO | Client | make_ans 
+2021-11-01 01:00:03,857 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:04,863 | INFO | Client | shot (2, 2) 
+2021-11-01 01:00:05,867 | INFO | Client | wait_ans 
+2021-11-01 01:00:06,874 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:07,882 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:07,882 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:07,905 | INFO | Client | wait_shot 
+2021-11-01 01:00:08,910 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '1', 'step_y': '2'} 
+2021-11-01 01:00:08,910 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '1', 'step_y': '2'} 
+2021-11-01 01:00:08,910 | INFO | Client | make_ans 
+2021-11-01 01:00:08,910 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:09,918 | INFO | Client | shot (1, 1) 
+2021-11-01 01:00:10,922 | INFO | Client | wait_ans 
+2021-11-01 01:00:11,926 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:12,931 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:12,931 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:12,948 | INFO | Client | wait_shot 
+2021-11-01 01:00:13,951 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '8'} 
+2021-11-01 01:00:13,952 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '8'} 
+2021-11-01 01:00:13,952 | INFO | Client | make_ans 
+2021-11-01 01:00:13,952 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:14,968 | INFO | Client | shot (0, 4) 
+2021-11-01 01:00:15,975 | INFO | Client | wait_ans 
+2021-11-01 01:00:16,984 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:17,993 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:17,993 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:18,010 | INFO | Client | wait_shot 
+2021-11-01 01:00:19,014 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '8', 'step_y': '1'} 
+2021-11-01 01:00:19,014 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '8', 'step_y': '1'} 
+2021-11-01 01:00:19,014 | INFO | Client | make_ans 
+2021-11-01 01:00:19,014 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:20,020 | INFO | Client | shot (4, 0) 
+2021-11-01 01:00:21,024 | INFO | Client | wait_ans 
+2021-11-01 01:00:22,030 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:23,037 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 3, "y": 0, "rotation": 1, "width": 1, "height": 2}', 'endGame': 'False'} 
+2021-11-01 01:00:23,037 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 1, 'x': 3, 'y': 0, 'rotation': 1, 'width': 1, 'height': 2} 
+2021-11-01 01:00:23,055 | INFO | Client | shot (3, 0) 
+2021-11-01 01:00:24,059 | INFO | Client | wait_ans 
+2021-11-01 01:00:25,069 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:26,074 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 3, "y": 0, "rotation": 1, "width": 1, "height": 2}', 'endGame': 'False'} 
+2021-11-01 01:00:26,074 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 0, 'x': 3, 'y': 0, 'rotation': 1, 'width': 1, 'height': 2} 
+2021-11-01 01:00:26,097 | INFO | Client | shot (6, 9) 
+2021-11-01 01:00:27,101 | INFO | Client | wait_ans 
+2021-11-01 01:00:28,105 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:29,109 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:29,109 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:29,137 | INFO | Client | wait_shot 
+2021-11-01 01:00:30,141 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '0'} 
+2021-11-01 01:00:30,141 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '0'} 
+2021-11-01 01:00:30,141 | INFO | Client | make_ans 
+2021-11-01 01:00:30,141 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:31,146 | INFO | Client | shot (2, 9) 
+2021-11-01 01:00:32,151 | INFO | Client | wait_ans 
+2021-11-01 01:00:33,155 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:34,163 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 2, "y": 9, "rotation": 1, "width": 1, "height": 2}', 'endGame': 'False'} 
+2021-11-01 01:00:34,164 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 1, 'x': 2, 'y': 9, 'rotation': 1, 'width': 1, 'height': 2} 
+2021-11-01 01:00:34,185 | INFO | Client | shot (2, 8) 
+2021-11-01 01:00:35,189 | INFO | Client | wait_ans 
+2021-11-01 01:00:36,198 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:37,208 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:37,208 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:37,225 | INFO | Client | wait_shot 
+2021-11-01 01:00:38,229 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '5'} 
+2021-11-01 01:00:38,229 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '5'} 
+2021-11-01 01:00:38,229 | INFO | Client | make_ans 
+2021-11-01 01:00:38,229 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:00:39,238 | INFO | Client | shot (3, 9) 
+2021-11-01 01:00:40,242 | INFO | Client | wait_ans 
+2021-11-01 01:00:41,246 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:42,249 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 2, "y": 9, "rotation": 1, "width": 1, "height": 2}', 'endGame': 'False'} 
+2021-11-01 01:00:42,250 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 0, 'x': 2, 'y': 9, 'rotation': 1, 'width': 1, 'height': 2} 
+2021-11-01 01:00:42,260 | INFO | Client | shot (9, 7) 
+2021-11-01 01:00:43,264 | INFO | Client | wait_ans 
+2021-11-01 01:00:44,267 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:45,274 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 3, "hp": 2, "x": 9, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:00:45,274 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 2, 'x': 9, 'y': 7, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 01:00:45,292 | INFO | Client | shot (9, 8) 
+2021-11-01 01:00:46,296 | INFO | Client | wait_ans 
+2021-11-01 01:00:47,303 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:48,307 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 3, "hp": 1, "x": 9, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:00:48,307 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 1, 'x': 9, 'y': 7, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 01:00:48,317 | INFO | Client | shot (9, 6) 
+2021-11-01 01:00:49,321 | INFO | Client | wait_ans 
+2021-11-01 01:00:50,325 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:51,329 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:00:51,329 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:00:51,346 | INFO | Client | wait_shot 
+2021-11-01 01:00:52,350 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '6'} 
+2021-11-01 01:00:52,350 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '6'} 
+2021-11-01 01:00:52,350 | INFO | Client | make_ans 
+2021-11-01 01:00:52,351 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 4, "hp": 3, "x": 9, "y": 6, "rotation": 0, "width": 4, "height": 1}', 'endGame': False} 
+2021-11-01 01:00:53,365 | INFO | Client | wait_shot 
+2021-11-01 01:00:54,371 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:55,375 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '7'} 
+2021-11-01 01:00:55,375 | INFO | Client | make_ans 
+2021-11-01 01:00:55,375 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 4, "hp": 2, "x": 9, "y": 6, "rotation": 0, "width": 4, "height": 1}', 'endGame': False} 
+2021-11-01 01:00:56,381 | INFO | Client | wait_shot 
+2021-11-01 01:00:57,386 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:00:58,390 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '8'} 
+2021-11-01 01:00:58,390 | INFO | Client | make_ans 
+2021-11-01 01:00:58,390 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 4, "hp": 1, "x": 9, "y": 6, "rotation": 0, "width": 4, "height": 1}', 'endGame': False} 
+2021-11-01 01:00:59,401 | INFO | Client | wait_shot 
+2021-11-01 01:01:00,408 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:01,417 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '5'} 
+2021-11-01 01:01:01,417 | INFO | Client | make_ans 
+2021-11-01 01:01:01,417 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:01:02,426 | INFO | Client | shot (9, 9) 
+2021-11-01 01:01:03,431 | INFO | Client | wait_ans 
+2021-11-01 01:01:04,439 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:05,443 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 3, "hp": 0, "x": 9, "y": 7, "rotation": 0, "width": 3, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:05,444 | INFO | Client | wait_ans ship:  {'size': 3, 'hp': 0, 'x': 9, 'y': 7, 'rotation': 0, 'width': 3, 'height': 1} 
+2021-11-01 01:01:05,458 | INFO | Client | shot (9, 1) 
+2021-11-01 01:01:06,463 | INFO | Client | wait_ans 
+2021-11-01 01:01:07,470 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:08,474 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 4, "hp": 3, "x": 9, "y": 0, "rotation": 0, "width": 4, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:08,474 | INFO | Client | wait_ans ship:  {'size': 4, 'hp': 3, 'x': 9, 'y': 0, 'rotation': 0, 'width': 4, 'height': 1} 
+2021-11-01 01:01:08,482 | INFO | Client | shot (9, 0) 
+2021-11-01 01:01:09,486 | INFO | Client | wait_ans 
+2021-11-01 01:01:10,490 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:11,499 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 4, "hp": 2, "x": 9, "y": 0, "rotation": 0, "width": 4, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:11,500 | INFO | Client | wait_ans ship:  {'size': 4, 'hp': 2, 'x': 9, 'y': 0, 'rotation': 0, 'width': 4, 'height': 1} 
+2021-11-01 01:01:11,515 | INFO | Client | shot (9, 2) 
+2021-11-01 01:01:12,519 | INFO | Client | wait_ans 
+2021-11-01 01:01:13,528 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:14,537 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 4, "hp": 1, "x": 9, "y": 0, "rotation": 0, "width": 4, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:14,538 | INFO | Client | wait_ans ship:  {'size': 4, 'hp': 1, 'x': 9, 'y': 0, 'rotation': 0, 'width': 4, 'height': 1} 
+2021-11-01 01:01:14,546 | INFO | Client | shot (9, 3) 
+2021-11-01 01:01:15,550 | INFO | Client | wait_ans 
+2021-11-01 01:01:16,554 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:17,558 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 4, "hp": 0, "x": 9, "y": 0, "rotation": 0, "width": 4, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:17,558 | INFO | Client | wait_ans ship:  {'size': 4, 'hp': 0, 'x': 9, 'y': 0, 'rotation': 0, 'width': 4, 'height': 1} 
+2021-11-01 01:01:17,566 | INFO | Client | shot (1, 3) 
+2021-11-01 01:01:18,570 | INFO | Client | wait_ans 
+2021-11-01 01:01:19,578 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:20,587 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:01:20,587 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:01:20,595 | INFO | Client | wait_shot 
+2021-11-01 01:01:21,599 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '9'} 
+2021-11-01 01:01:21,599 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '9'} 
+2021-11-01 01:01:21,599 | INFO | Client | make_ans 
+2021-11-01 01:01:21,599 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 4, "hp": 0, "x": 9, "y": 6, "rotation": 0, "width": 4, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:22,606 | INFO | Client | wait_shot 
+2021-11-01 01:01:23,610 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:24,616 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '2'} 
+2021-11-01 01:01:24,616 | INFO | Client | make_ans 
+2021-11-01 01:01:24,616 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 3, "hp": 2, "x": 7, "y": 0, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:25,627 | INFO | Client | wait_shot 
+2021-11-01 01:01:26,635 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:27,642 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '8', 'step_y': '2'} 
+2021-11-01 01:01:27,643 | INFO | Client | make_ans 
+2021-11-01 01:01:27,643 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:01:28,653 | INFO | Client | shot (6, 8) 
+2021-11-01 01:01:29,656 | INFO | Client | wait_ans 
+2021-11-01 01:01:30,660 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:31,664 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:01:31,665 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:01:31,672 | INFO | Client | wait_shot 
+2021-11-01 01:01:32,675 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '1'} 
+2021-11-01 01:01:32,675 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '1'} 
+2021-11-01 01:01:32,675 | INFO | Client | make_ans 
+2021-11-01 01:01:32,676 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 3, "hp": 1, "x": 7, "y": 0, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:33,690 | INFO | Client | wait_shot 
+2021-11-01 01:01:34,696 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:35,705 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '0'} 
+2021-11-01 01:01:35,706 | INFO | Client | make_ans 
+2021-11-01 01:01:35,706 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 3, "hp": 0, "x": 7, "y": 0, "rotation": 0, "width": 3, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:36,717 | INFO | Client | wait_shot 
+2021-11-01 01:01:37,723 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:38,731 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '1'} 
+2021-11-01 01:01:38,731 | INFO | Client | make_ans 
+2021-11-01 01:01:38,731 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 2, "y": 0, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:39,741 | INFO | Client | wait_shot 
+2021-11-01 01:01:40,749 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:41,756 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '1', 'step_y': '1'} 
+2021-11-01 01:01:41,756 | INFO | Client | make_ans 
+2021-11-01 01:01:41,756 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:01:42,765 | INFO | Client | shot (3, 5) 
+2021-11-01 01:01:43,770 | INFO | Client | wait_ans 
+2021-11-01 01:01:44,775 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:45,779 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:01:45,779 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:01:45,786 | INFO | Client | wait_shot 
+2021-11-01 01:01:46,790 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '0'} 
+2021-11-01 01:01:46,790 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '0'} 
+2021-11-01 01:01:46,790 | INFO | Client | make_ans 
+2021-11-01 01:01:46,791 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 2, "y": 0, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:01:47,806 | INFO | Client | wait_shot 
+2021-11-01 01:01:48,814 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:49,822 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '5'} 
+2021-11-01 01:01:49,823 | INFO | Client | make_ans 
+2021-11-01 01:01:49,823 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:01:50,836 | INFO | Client | shot (5, 7) 
+2021-11-01 01:01:51,840 | INFO | Client | wait_ans 
+2021-11-01 01:01:52,847 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:53,851 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:01:53,852 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:01:53,866 | INFO | Client | wait_shot 
+2021-11-01 01:01:54,871 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '8'} 
+2021-11-01 01:01:54,871 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '8'} 
+2021-11-01 01:01:54,871 | INFO | Client | make_ans 
+2021-11-01 01:01:54,871 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:01:55,879 | INFO | Client | shot (2, 4) 
+2021-11-01 01:01:56,883 | INFO | Client | wait_ans 
+2021-11-01 01:01:57,887 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:01:58,892 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 2, "y": 4, "rotation": 1, "width": 1, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:01:58,892 | INFO | Client | wait_ans ship:  {'size': 1, 'hp': 0, 'x': 2, 'y': 4, 'rotation': 1, 'width': 1, 'height': 1} 
+2021-11-01 01:01:58,898 | INFO | Client | shot (0, 2) 
+2021-11-01 01:01:59,902 | INFO | Client | wait_ans 
+2021-11-01 01:02:00,906 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:01,911 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:01,911 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:01,921 | INFO | Client | wait_shot 
+2021-11-01 01:02:02,927 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '3'} 
+2021-11-01 01:02:02,927 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '3'} 
+2021-11-01 01:02:02,927 | INFO | Client | make_ans 
+2021-11-01 01:02:02,928 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:03,941 | INFO | Client | shot (4, 6) 
+2021-11-01 01:02:04,947 | INFO | Client | wait_ans 
+2021-11-01 01:02:05,951 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:06,955 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:06,955 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:06,960 | INFO | Client | wait_shot 
+2021-11-01 01:02:07,963 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '4'} 
+2021-11-01 01:02:07,964 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '4'} 
+2021-11-01 01:02:07,964 | INFO | Client | make_ans 
+2021-11-01 01:02:07,964 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 5, "y": 4, "rotation": 1, "width": 1, "height": 1}', 'endGame': False} 
+2021-11-01 01:02:08,969 | INFO | Client | wait_shot 
+2021-11-01 01:02:09,974 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:10,982 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '1', 'step_y': '4'} 
+2021-11-01 01:02:10,983 | INFO | Client | make_ans 
+2021-11-01 01:02:10,983 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:11,993 | INFO | Client | shot (4, 2) 
+2021-11-01 01:02:13,000 | INFO | Client | wait_ans 
+2021-11-01 01:02:14,005 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:15,008 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:15,008 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:15,013 | INFO | Client | wait_shot 
+2021-11-01 01:02:16,017 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '9'} 
+2021-11-01 01:02:16,017 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '9'} 
+2021-11-01 01:02:16,017 | INFO | Client | make_ans 
+2021-11-01 01:02:16,017 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:17,026 | INFO | Client | shot (5, 3) 
+2021-11-01 01:02:18,033 | INFO | Client | wait_ans 
+2021-11-01 01:02:19,044 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:20,053 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:20,053 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:20,058 | INFO | Client | wait_shot 
+2021-11-01 01:02:21,062 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '3'} 
+2021-11-01 01:02:21,062 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '3'} 
+2021-11-01 01:02:21,062 | INFO | Client | make_ans 
+2021-11-01 01:02:21,062 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 0, "y": 3, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:02:22,068 | INFO | Client | wait_shot 
+2021-11-01 01:02:23,072 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:24,078 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '2'} 
+2021-11-01 01:02:24,078 | INFO | Client | make_ans 
+2021-11-01 01:02:24,078 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:25,093 | INFO | Client | shot (0, 7) 
+2021-11-01 01:02:26,099 | INFO | Client | wait_ans 
+2021-11-01 01:02:27,108 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:28,117 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:28,117 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:28,130 | INFO | Client | wait_shot 
+2021-11-01 01:02:29,134 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '4'} 
+2021-11-01 01:02:29,134 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '4'} 
+2021-11-01 01:02:29,134 | INFO | Client | make_ans 
+2021-11-01 01:02:29,134 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 0, "y": 3, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:02:30,140 | INFO | Client | wait_shot 
+2021-11-01 01:02:31,144 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:32,151 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '7'} 
+2021-11-01 01:02:32,152 | INFO | Client | make_ans 
+2021-11-01 01:02:32,152 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:33,161 | INFO | Client | shot (2, 6) 
+2021-11-01 01:02:34,166 | INFO | Client | wait_ans 
+2021-11-01 01:02:35,172 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:36,183 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:36,184 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:36,193 | INFO | Client | wait_shot 
+2021-11-01 01:02:37,198 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '6'} 
+2021-11-01 01:02:37,199 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '6'} 
+2021-11-01 01:02:37,199 | INFO | Client | make_ans 
+2021-11-01 01:02:37,199 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:38,211 | INFO | Client | shot (7, 0) 
+2021-11-01 01:02:39,215 | INFO | Client | wait_ans 
+2021-11-01 01:02:40,219 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:41,223 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:41,223 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:41,227 | INFO | Client | wait_shot 
+2021-11-01 01:02:42,231 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '4'} 
+2021-11-01 01:02:42,231 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '4'} 
+2021-11-01 01:02:42,231 | INFO | Client | make_ans 
+2021-11-01 01:02:42,231 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 9, "y": 4, "rotation": 1, "width": 1, "height": 1}', 'endGame': False} 
+2021-11-01 01:02:43,242 | INFO | Client | wait_shot 
+2021-11-01 01:02:44,249 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:45,253 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '7'} 
+2021-11-01 01:02:45,254 | INFO | Client | make_ans 
+2021-11-01 01:02:45,254 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:46,267 | INFO | Client | shot (7, 7) 
+2021-11-01 01:02:47,272 | INFO | Client | wait_ans 
+2021-11-01 01:02:48,276 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:49,280 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:49,280 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:49,285 | INFO | Client | wait_shot 
+2021-11-01 01:02:50,289 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '1'} 
+2021-11-01 01:02:50,289 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '1'} 
+2021-11-01 01:02:50,289 | INFO | Client | make_ans 
+2021-11-01 01:02:50,289 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:51,297 | INFO | Client | shot (5, 5) 
+2021-11-01 01:02:52,303 | INFO | Client | wait_ans 
+2021-11-01 01:02:53,311 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:54,319 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:54,319 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:54,323 | INFO | Client | wait_shot 
+2021-11-01 01:02:55,327 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '5'} 
+2021-11-01 01:02:55,327 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '5'} 
+2021-11-01 01:02:55,327 | INFO | Client | make_ans 
+2021-11-01 01:02:55,327 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:02:56,333 | INFO | Client | shot (0, 0) 
+2021-11-01 01:02:57,337 | INFO | Client | wait_ans 
+2021-11-01 01:02:58,341 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:02:59,349 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:02:59,350 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:02:59,361 | INFO | Client | wait_shot 
+2021-11-01 01:03:00,365 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '0'} 
+2021-11-01 01:03:00,366 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '0'} 
+2021-11-01 01:03:00,366 | INFO | Client | make_ans 
+2021-11-01 01:03:00,366 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:01,381 | INFO | Client | shot (6, 1) 
+2021-11-01 01:03:02,387 | INFO | Client | wait_ans 
+2021-11-01 01:03:03,397 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:04,408 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:04,409 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:04,420 | INFO | Client | wait_shot 
+2021-11-01 01:03:05,426 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '9'} 
+2021-11-01 01:03:05,426 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '9'} 
+2021-11-01 01:03:05,426 | INFO | Client | make_ans 
+2021-11-01 01:03:05,426 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:06,439 | INFO | Client | shot (5, 9) 
+2021-11-01 01:03:07,445 | INFO | Client | wait_ans 
+2021-11-01 01:03:08,453 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:09,461 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:09,461 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:09,471 | INFO | Client | wait_shot 
+2021-11-01 01:03:10,475 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '8'} 
+2021-11-01 01:03:10,475 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '8'} 
+2021-11-01 01:03:10,476 | INFO | Client | make_ans 
+2021-11-01 01:03:10,476 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 0, "y": 8, "rotation": 1, "width": 1, "height": 1}', 'endGame': False} 
+2021-11-01 01:03:11,487 | INFO | Client | wait_shot 
+2021-11-01 01:03:12,495 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:13,503 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '1'} 
+2021-11-01 01:03:13,503 | INFO | Client | make_ans 
+2021-11-01 01:03:13,503 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 0, "y": 0, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:03:14,514 | INFO | Client | wait_shot 
+2021-11-01 01:03:15,521 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:16,529 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '0'} 
+2021-11-01 01:03:16,529 | INFO | Client | make_ans 
+2021-11-01 01:03:16,530 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 0, "y": 0, "rotation": 0, "width": 2, "height": 1}', 'endGame': False} 
+2021-11-01 01:03:17,537 | INFO | Client | wait_shot 
+2021-11-01 01:03:18,541 | INFO | Client | wait_shot accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:19,548 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '0'} 
+2021-11-01 01:03:19,549 | INFO | Client | make_ans 
+2021-11-01 01:03:19,549 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:20,558 | INFO | Client | shot (0, 9) 
+2021-11-01 01:03:21,561 | INFO | Client | wait_ans 
+2021-11-01 01:03:22,565 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:23,569 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:23,569 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:23,577 | INFO | Client | wait_shot 
+2021-11-01 01:03:24,582 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '7'} 
+2021-11-01 01:03:24,582 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '7'} 
+2021-11-01 01:03:24,582 | INFO | Client | make_ans 
+2021-11-01 01:03:24,583 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:25,591 | INFO | Client | shot (7, 9) 
+2021-11-01 01:03:26,595 | INFO | Client | wait_ans 
+2021-11-01 01:03:27,605 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:28,613 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'get', 'ship': '{"size": 2, "hp": 1, "x": 7, "y": 8, "rotation": 0, "width": 2, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:03:28,613 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 1, 'x': 7, 'y': 8, 'rotation': 0, 'width': 2, 'height': 1} 
+2021-11-01 01:03:28,617 | INFO | Client | shot (7, 8) 
+2021-11-01 01:03:29,620 | INFO | Client | wait_ans 
+2021-11-01 01:03:30,623 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:31,627 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 2, "hp": 0, "x": 7, "y": 8, "rotation": 0, "width": 2, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:03:31,627 | INFO | Client | wait_ans ship:  {'size': 2, 'hp': 0, 'x': 7, 'y': 8, 'rotation': 0, 'width': 2, 'height': 1} 
+2021-11-01 01:03:31,631 | INFO | Client | shot (0, 8) 
+2021-11-01 01:03:32,635 | INFO | Client | wait_ans 
+2021-11-01 01:03:33,643 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:34,655 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:34,655 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:34,661 | INFO | Client | wait_shot 
+2021-11-01 01:03:35,667 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '2'} 
+2021-11-01 01:03:35,667 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '9', 'step_y': '2'} 
+2021-11-01 01:03:35,667 | INFO | Client | make_ans 
+2021-11-01 01:03:35,667 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:36,673 | INFO | Client | shot (4, 7) 
+2021-11-01 01:03:37,677 | INFO | Client | wait_ans 
+2021-11-01 01:03:38,681 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:39,685 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 4, "y": 7, "rotation": 1, "width": 1, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:03:39,685 | INFO | Client | wait_ans ship:  {'size': 1, 'hp': 0, 'x': 4, 'y': 7, 'rotation': 1, 'width': 1, 'height': 1} 
+2021-11-01 01:03:39,690 | INFO | Client | shot (0, 5) 
+2021-11-01 01:03:40,695 | INFO | Client | wait_ans 
+2021-11-01 01:03:41,699 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:42,711 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:42,711 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:42,721 | INFO | Client | wait_shot 
+2021-11-01 01:03:43,725 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '8'} 
+2021-11-01 01:03:43,725 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '8'} 
+2021-11-01 01:03:43,725 | INFO | Client | make_ans 
+2021-11-01 01:03:43,725 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:44,731 | INFO | Client | shot (1, 7) 
+2021-11-01 01:03:45,735 | INFO | Client | wait_ans 
+2021-11-01 01:03:46,739 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:47,743 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:47,744 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:47,753 | INFO | Client | wait_shot 
+2021-11-01 01:03:48,759 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '2'} 
+2021-11-01 01:03:48,759 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '2'} 
+2021-11-01 01:03:48,759 | INFO | Client | make_ans 
+2021-11-01 01:03:48,759 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:49,765 | INFO | Client | shot (0, 3) 
+2021-11-01 01:03:50,770 | INFO | Client | wait_ans 
+2021-11-01 01:03:51,774 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:52,779 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:52,779 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:52,781 | INFO | Client | wait_shot 
+2021-11-01 01:03:53,785 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '9'} 
+2021-11-01 01:03:53,785 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '9'} 
+2021-11-01 01:03:53,785 | INFO | Client | make_ans 
+2021-11-01 01:03:53,785 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:54,793 | INFO | Client | shot (9, 5) 
+2021-11-01 01:03:55,799 | INFO | Client | wait_ans 
+2021-11-01 01:03:56,806 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:03:57,814 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:03:57,814 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:03:57,822 | INFO | Client | wait_shot 
+2021-11-01 01:03:58,828 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '7'} 
+2021-11-01 01:03:58,828 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '5', 'step_y': '7'} 
+2021-11-01 01:03:58,828 | INFO | Client | make_ans 
+2021-11-01 01:03:58,828 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:03:59,835 | INFO | Client | shot (6, 0) 
+2021-11-01 01:04:00,839 | INFO | Client | wait_ans 
+2021-11-01 01:04:01,843 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:02,847 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:02,848 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:02,856 | INFO | Client | wait_shot 
+2021-11-01 01:04:03,862 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '3'} 
+2021-11-01 01:04:03,863 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '3'} 
+2021-11-01 01:04:03,863 | INFO | Client | make_ans 
+2021-11-01 01:04:03,863 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:04,876 | INFO | Client | shot (0, 6) 
+2021-11-01 01:04:05,884 | INFO | Client | wait_ans 
+2021-11-01 01:04:06,889 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:07,893 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:07,893 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:07,895 | INFO | Client | wait_shot 
+2021-11-01 01:04:08,899 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '5'} 
+2021-11-01 01:04:08,899 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '7', 'step_y': '5'} 
+2021-11-01 01:04:08,899 | INFO | Client | make_ans 
+2021-11-01 01:04:08,899 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:09,909 | INFO | Client | shot (3, 2) 
+2021-11-01 01:04:10,915 | INFO | Client | wait_ans 
+2021-11-01 01:04:11,921 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:12,927 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:12,927 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:12,933 | INFO | Client | wait_shot 
+2021-11-01 01:04:13,938 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '6'} 
+2021-11-01 01:04:13,938 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '0', 'step_y': '6'} 
+2021-11-01 01:04:13,938 | INFO | Client | make_ans 
+2021-11-01 01:04:13,938 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:14,943 | INFO | Client | shot (2, 7) 
+2021-11-01 01:04:15,947 | INFO | Client | wait_ans 
+2021-11-01 01:04:16,951 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:17,955 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:17,956 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:17,962 | INFO | Client | wait_shot 
+2021-11-01 01:04:18,969 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '5'} 
+2021-11-01 01:04:18,970 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '3', 'step_y': '5'} 
+2021-11-01 01:04:18,970 | INFO | Client | make_ans 
+2021-11-01 01:04:18,970 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:19,980 | INFO | Client | shot (0, 1) 
+2021-11-01 01:04:20,986 | INFO | Client | wait_ans 
+2021-11-01 01:04:21,994 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:23,002 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:23,002 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:23,007 | INFO | Client | wait_shot 
+2021-11-01 01:04:24,013 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '8'} 
+2021-11-01 01:04:24,013 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '4', 'step_y': '8'} 
+2021-11-01 01:04:24,013 | INFO | Client | make_ans 
+2021-11-01 01:04:24,014 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:25,020 | INFO | Client | shot (1, 2) 
+2021-11-01 01:04:26,024 | INFO | Client | wait_ans 
+2021-11-01 01:04:27,031 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:28,038 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:28,039 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:28,045 | INFO | Client | wait_shot 
+2021-11-01 01:04:29,051 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '4'} 
+2021-11-01 01:04:29,052 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '2', 'step_y': '4'} 
+2021-11-01 01:04:29,052 | INFO | Client | make_ans 
+2021-11-01 01:04:29,052 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:30,067 | INFO | Client | shot (5, 2) 
+2021-11-01 01:04:31,074 | INFO | Client | wait_ans 
+2021-11-01 01:04:32,079 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:33,088 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 5, "y": 2, "rotation": 1, "width": 1, "height": 1}', 'endGame': 'False'} 
+2021-11-01 01:04:33,089 | INFO | Client | wait_ans ship:  {'size': 1, 'hp': 0, 'x': 5, 'y': 2, 'rotation': 1, 'width': 1, 'height': 1} 
+2021-11-01 01:04:33,094 | INFO | Client | shot (1, 0) 
+2021-11-01 01:04:34,099 | INFO | Client | wait_ans 
+2021-11-01 01:04:35,107 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:36,115 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'miss', 'endGame': 'False'} 
+2021-11-01 01:04:36,116 | INFO | Client | wait_ans ship:  None 
+2021-11-01 01:04:36,123 | INFO | Client | wait_shot 
+2021-11-01 01:04:37,130 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '6'} 
+2021-11-01 01:04:37,130 | INFO | Client | wait_shot accepted data:  {'ans': 'OK', 'step_x': '6', 'step_y': '6'} 
+2021-11-01 01:04:37,130 | INFO | Client | make_ans 
+2021-11-01 01:04:37,130 | INFO | Client | make_ans sending data:  {'id': 268471993, 'ans': 'miss', 'ship': None, 'endGame': False} 
+2021-11-01 01:04:38,138 | INFO | Client | shot (5, 4) 
+2021-11-01 01:04:39,143 | INFO | Client | wait_ans 
+2021-11-01 01:04:40,151 | INFO | Client | wait_ans accepted data:  {'ans': 'wait'} 
+2021-11-01 01:04:41,159 | INFO | Client | wait_ans accepted data:  {'id': '160605624', 'ans': 'kill', 'ship': '{"size": 1, "hp": 0, "x": 5, "y": 4, "rotation": 1, "width": 1, "height": 1}', 'endGame': 'True'} 
+2021-11-01 01:04:41,159 | INFO | Client | wait_ans ship:  {'size': 1, 'hp': 0, 'x': 5, 'y': 4, 'rotation': 1, 'width': 1, 'height': 1} 

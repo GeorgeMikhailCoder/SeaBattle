@@ -4,6 +4,8 @@ from random import randrange
 from random import choice
 import time
 
+from optimal_placement import main as ship_placement_jenny
+from ship_extraction import ship_placement_oleg
 from client import ServerConnection
 from PaintPrimitives import Cell, FieldPart
 from Ship import Ship
@@ -226,6 +228,7 @@ class Game(object):
 
     def ships_setup(self, player):
         # делаем расстановку кораблей по правилам заданным в классе Game
+
         for i in Game.ships_rules:
             # задаем количество попыток при выставлении кораблей случайным образом
             # нужно для того чтобы не попасть в бесконечный цикл когда для последнего корабля остаётся очень мало места
@@ -233,7 +236,6 @@ class Game(object):
             ship_size = Game.ships_rules[i]
             # создаем предварительно корабль-балванку просто нужного размера
             # дальше будет видно что мы присваиваем ему координаты которые ввел пользователь
-            ship = Ship(ship_size, 0, 0, 0)
 
             while True:
 
@@ -247,7 +249,15 @@ class Game(object):
                     pass
                 player.message.clear()
 
-                x, y, r = player.get_input('ship_setup')
+                if player.auto_ship_setup is False:
+                    ship = Ship(ship_size, 0, 0, 0)
+                    x, y, r = player.get_input('ship_setup')
+                else:
+                    stage_calc = ship_placement_jenny()
+                    all_ship_list = ship_placement_oleg(stage_calc)
+                    ii = int(i) - 1
+                    x, y, r, ssi = all_ship_list[ii]
+                    ship = Ship(ssi, 0, 0, 0)
                 # если пользователь ввёл какую-то ерунду функция возвратит нули, значит без вопросов делаем continue
                 # фактически просто просим еще раз ввести координаты
                 if x + y + r < 0:
@@ -433,6 +443,11 @@ if __name__ == '__main__':
             ans_from_serv, assum_ship, end_flag = server.wait_ans()
             shot_result = game.current_player.receive_remote(ans_from_serv, assum_ship, x, y)
 
+            if end_flag is True:
+                print(f'Вы, {game.current_player.name}, выиграли матч! Поздравления!')
+                break
+
+
         # в зависимости от результата накидываем сообщений и текущему игроку и следующему
         # ну и если промазал - передаем ход следующему игроку.
             if shot_result == 'miss':
@@ -463,7 +478,7 @@ if __name__ == '__main__':
             Game.clear_screen()
             game.current_player.field.draw_field(FieldPart.main)
             if end_flag == 1 or len(game.current_player.enemy_ships) == 0:
-                print(f'{game.current_player.name} выиграл матч! Поздравления!')
+                print(f'Вы, {game.current_player.name} выиграли матч! Поздравления!')
             else:
                 print('Сожалеем, но Вы проиграли!')
             break
