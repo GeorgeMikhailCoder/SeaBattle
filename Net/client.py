@@ -1,7 +1,7 @@
 import requests
 from time import sleep
 from control.Ship import Ship
-
+import sys
 import os
 import logging.config
 
@@ -11,7 +11,7 @@ class ServerConnection:
         from random import random
         return int(random()*1_000_000_000 % 1_000_000_000)
 
-    def __init__(self, serv_url="http://127.0.0.1:5000/"):
+    def __init__(self, serv_url="http://127.0.0.1:5000/", conTry=5, timeout=1):
         self.urlWant = "want"
         self.urlBegin = "begin"
         self.urlStep = "shot"
@@ -19,14 +19,25 @@ class ServerConnection:
         self.urlAns = "ans_shot"
         self.urlWaitAns = "wait_ans"
         self.baseUrl = serv_url
+        self.conTry = conTry
+        self.timeout = timeout
         self.myID = self.__id__()
 
         self.logger = logging.getLogger("Client")
         self.logger.setLevel(logging.DEBUG)
-        h = logging.FileHandler("log_client_" + str(self.myID))
+
         f = logging.Formatter("%(asctime)s | %(levelname)s | %(name)s | %(message)s")
-        h.setFormatter(f)
-        self.logger.addHandler(h)
+
+        handlerFile= logging.FileHandler("log_client_" + str(self.myID))
+        handlerFile.setLevel(logging.INFO)
+        handlerFile.setFormatter(f)
+
+        handlerConsole = logging.StreamHandler(stream=sys.stdout)
+        handlerConsole.setLevel(logging.ERROR)
+        handlerConsole.setFormatter(f)
+
+        self.logger.addHandler(handlerFile)
+        self.logger.addHandler(handlerConsole)
 
     def __lg__(self, *args):
         s = ""
@@ -41,18 +52,23 @@ class ServerConnection:
         self.logger.error(s)
 
     def __makeGet__(self, url, data=None):
+        conTry = 0
         data["id"] = self.myID
         while True:
             try:
                 ans = requests.get(url, params=data)
-                sleep(1)
+                sleep(self.timeout)
                 if ans.status_code!=200:
-                    print("Some errors in connection. Next try in 1 secound")
-                    continue
+                    print("Server returned wrong status code")
+                    break
                 res = ans.json()
                 break
-            except:
-                print("Some error while parsing json")
+            except Exception:
+                conTry+=1
+                self.__lgerr__("Some errors in connection. Next try in 1 secound")
+                if(conTry>self.conTry):
+                    self.__lgerr__("Final try, program closed")
+                    exit(0)
         return res
     
     def __myRequest__(self, url, ansName, data=None):
@@ -60,10 +76,16 @@ class ServerConnection:
         if "error" in data:
             print("Error from server:")
             print(data["error"])
-    
+
+        conTry = 0
         while not ansName in ans:
             print("Json hasn't field '" + ansName +"'")
             ans = self.__makeGet__(url,data)
+            conTry+=1
+            if conTry>self.conTry:
+                self.__lgerr__("Final try, program closed")
+                exit(0)
+
         return ans[ansName], ans
     
     def want(self):
