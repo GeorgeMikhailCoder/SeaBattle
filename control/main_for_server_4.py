@@ -463,9 +463,9 @@ if __name__ == '__main__':
     end_flag = False
 
     while True:
-        game.current_player.message.clear()
-        game.draw()
         Game.clear_screen()
+        game.draw()
+        game.current_player.message.clear()
         # очищаем список сообщений для игрока. В следующий ход он уже получит новый список сообщений
         # ждём результата выстрела на основе выстрела текущего игрока в следующего
 
